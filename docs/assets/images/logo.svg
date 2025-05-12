@@ -32,11 +32,11 @@
     stroke-width="1"
   />
   
-  <!-- Jail bars with rounded corners - smaller and more padding -->
-  <rect x="60" y="55" width="10" height="90" rx="3" ry="3" fill="url(#barGradient)" />
-  <rect x="94" y="50" width="12" height="35" rx="4" ry="4" fill="url(#brokenBarGradient)" />
-  <rect x="94" y="115" width="12" height="35" rx="4" ry="4" fill="url(#brokenBarGradient)" />
-  <rect x="130" y="55" width="10" height="90" rx="3" ry="3" fill="url(#barGradient)" />
+  <!-- Jail bars with rounded corners - side bars made shorter but centered -->
+  <rect x="60" y="60" width="12" height="80" rx="4" ry="4" fill="url(#barGradient)" />
+  <rect x="94" y="45" width="12" height="40" rx="4" ry="4" fill="url(#brokenBarGradient)" />
+  <rect x="94" y="115" width="12" height="40" rx="4" ry="4" fill="url(#brokenBarGradient)" />
+  <rect x="128" y="60" width="12" height="80" rx="4" ry="4" fill="url(#barGradient)" />
   
   <!-- Connection between broken bars - zigzag line -->
   <path d="M100 95 L110 100 L100 105" 
