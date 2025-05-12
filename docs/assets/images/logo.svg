@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6B46C1" />
+      <stop offset="100%" stop-color="#3182CE" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="25" fill="url(#gradient)" />
+  <g transform="translate(40, 50)">
+    <!-- Jail bars -->
+    <rect x="10" y="10" width="10" height="80" rx="2" fill="white" />
+    <rect x="40" y="10" width="10" height="80" rx="2" fill="white" />
+    <rect x="70" y="10" width="10" height="80" rx="2" fill="white" />
+    <rect x="100" y="10" width="10" height="80" rx="2" fill="white" />
+    
+    <!-- Broken bar -->
+    <rect x="70" y="10" width="10" height="30" rx="2" fill="white" />
+    <rect x="70" y="60" width="10" height="30" rx="2" fill="white" />
+    
+    <!-- Wrench -->
+    <path d="M60,50 L110,20 L115,25 L80,55 Z" fill="white" transform="rotate(15, 80, 40)" />
+  </g>
+  <text x="100" y="165" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">JAILBREAK TOOLS</text>
+</svg> 
