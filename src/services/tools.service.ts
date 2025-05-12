@@ -41,8 +41,8 @@ export async function detectJailbreak(params: DetectJailbreakInput): Promise<Det
       score = 0.9 + (highestSimilarity - 0.92) * 1; // Scale remaining 0.08 to 0.1
     } else if (highestSimilarity > 0.85) {
       score = 0.6 + (highestSimilarity - 0.85) * 3.75; // Scale 0.85-0.92 to 0.6-0.9
-    } else if (highestSimilarity > 0.75) {
-      score = 0.3 + (highestSimilarity - 0.75) * 3; // Scale 0.75-0.85 to 0.3-0.6
+    } else if (highestSimilarity > 0.7) {
+      score = 0.5 + (highestSimilarity - 0.7) * 1.0; // Scale 0.7-0.8 to 0.5-0.6
     } else if (highestSimilarity > 0.65) {
       score = 0.1 + (highestSimilarity - 0.65) * 2; // Scale 0.65-0.75 to 0.1-0.3
     } else {
