@@ -250,9 +250,6 @@
             font-size: 2rem;
             margin-bottom: 1.5rem;
             color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .feature-title {
@@ -290,8 +287,6 @@
         .code-header .code-title i {
             margin-right: 8px;
             color: var(--primary-color);
-            position: relative;
-            top: 1px;
         }
 
         .code-lang-badge {
@@ -322,8 +317,6 @@
         .api-title i {
             margin-right: 10px;
             color: var(--primary-color);
-            position: relative;
-            top: 1px;
         }
 
         pre {
@@ -364,8 +357,6 @@
             font-size: 1.5rem;
             transition: all 0.2s;
             position: relative;
-            display: inline-flex;
-            align-items: center;
         }
 
         .social-links a:hover {
@@ -640,7 +631,7 @@
                 <div class="col-lg-6 mb-4">
                     <div class="api-method">
                         <div class="api-title">
-                            <i class="fas fa-bolt"></i>
+                            <i class="fas fa-bolt" style="margin-bottom: 10px;"></i>
                             <h3 class="h4">API Mode <span class="badge bg-primary ms-2">Simple</span></h3>
                         </div>
                         <p>Connect to our service with zero configuration:</p>
@@ -668,7 +659,7 @@ startServer({
                 <div class="col-lg-6 mb-4">
                     <div class="api-method">
                         <div class="api-title">
-                            <i class="fas fa-database"></i>
+                            <i class="fas fa-database" style="margin-bottom: 10px;"></i>
                             <h3 class="h4">DB Mode <span class="badge bg-secondary ms-2">Advanced</span></h3>
                         </div>
                         <p>Connect to your own MongoDB instance:</p>
@@ -721,7 +712,7 @@ startServer({
                 <div class="col-lg-10 mx-auto">
                     <div class="api-method">
                         <div class="api-title">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-shield-alt" style="margin-bottom: 10px;"></i>
                             <h3 class="h4">detectJailbreak</h3>
                         </div>
                         <p>Check if a prompt contains potential jailbreak patterns</p>
@@ -771,7 +762,7 @@ startServer({
 
                     <div class="api-method">
                         <div class="api-title">
-                            <i class="fas fa-robot"></i>
+                            <i class="fas fa-robot" style="margin-bottom: 10px;"></i>
                             <h3 class="h4">simulateResponse</h3>
                         </div>
                         <p>Find similar historical prompt-response pairs</p>
@@ -797,7 +788,7 @@ startServer({
 
                     <div class="api-method">
                         <div class="api-title">
-                            <i class="fas fa-search"></i>
+                            <i class="fas fa-search" style="margin-bottom: 10px;"></i>
                             <h3 class="h4">vectorSearch</h3>
                         </div>
                         <p>Semantic search for similar content</p>
@@ -837,7 +828,7 @@ startServer({
                         <span class="badge badge-tech me-1"><i class="fas fa-database me-1"></i> MongoDB</span>
                         <span class="badge badge-tech me-1"><i class="fab fa-node-js me-1"></i> Node.js</span>
                     </p>
-                    <p class="mt-3 text-muted small">MIT License &copy; 2023 JailbreakMe</p>
+                    <p class="mt-3 text-muted small">MIT License &copy; <span id="currentYear"></span> JailbreakMe</p>
                 </div>
                 <div class="col-md-6 text-md-end mt-4 mt-md-0">
                     <h3 class="h5 mb-3">Connect</h3>
@@ -862,6 +853,9 @@ startServer({
         document.addEventListener('DOMContentLoaded', () => {
             hljs.highlightAll();
             initGridBackground();
+
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
         });
 
         // Copy to clipboard function
