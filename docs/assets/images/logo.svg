@@ -1,31 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1A1A2E" />
-      <stop offset="100%" stop-color="#0F3460" />
-    </linearGradient>
-    <linearGradient id="barGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#4CC9F0" />
-      <stop offset="100%" stop-color="#3A86FF" />
-    </linearGradient>
-    <linearGradient id="brokenBarGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F72585" />
-      <stop offset="100%" stop-color="#B5179E" />
-    </linearGradient>
-  </defs>
+  <!-- Background shape -->
+  <rect width="200" height="200" rx="10" fill="#10101E" />
   
-  <!-- Background -->
-  <rect width="200" height="200" rx="15" fill="url(#bgGradient)" />
+  <!-- Jail bars - basic shapes with flat colors -->
+  <rect x="55" y="50" width="10" height="100" rx="1" fill="#7928CA" />
+  <rect x="95" y="50" width="10" height="40" rx="1" fill="#0070F3" />
+  <rect x="95" y="110" width="10" height="40" rx="1" fill="#0070F3" />
+  <rect x="135" y="50" width="10" height="100" rx="1" fill="#7928CA" />
   
-  <!-- Jail bars -->
-  <rect x="50" y="40" width="12" height="120" rx="2" fill="url(#barGradient)" />
-  <rect x="94" y="40" width="12" height="120" rx="2" fill="url(#barGradient)" />
-  <rect x="138" y="40" width="12" height="120" rx="2" fill="url(#barGradient)" />
-  
-  <!-- Broken bar -->
-  <rect x="94" y="40" width="12" height="45" rx="2" fill="url(#brokenBarGradient)" />
-  <rect x="94" y="115" width="12" height="45" rx="2" fill="url(#brokenBarGradient)" />
-  
-  <!-- Simple lightning connector -->
-  <path d="M100,85 L108,95 L94,105 L102,115" stroke="#F72585" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <!-- Simple line connecting broken bar -->
+  <path d="M100,90 L100,110" stroke="#FF0080" stroke-width="3" stroke-dasharray="3 3" stroke-linecap="round" />
 </svg> 
