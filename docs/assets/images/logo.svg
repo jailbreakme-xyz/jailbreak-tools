@@ -1,33 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define gradients -->
   <defs>
     <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0A0A1A" />
-      <stop offset="100%" stop-color="#111130" />
+      <stop offset="0%" stop-color="#141428" />
+      <stop offset="100%" stop-color="#0A0A1A" />
     </linearGradient>
-    <linearGradient id="barGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="barGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0BBF99" />
-      <stop offset="100%" stop-color="#099B7D" />
+      <stop offset="100%" stop-color="#09A080" />
     </linearGradient>
-    <linearGradient id="brokenBarGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="brokenBarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0BBF99" />
-      <stop offset="100%" stop-color="#099B7D" />
+      <stop offset="100%" stop-color="#27D9B5" />
+    </linearGradient>
+    <linearGradient id="connectorGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0BBF99" />
+      <stop offset="100%" stop-color="#0BBF99" />
     </linearGradient>
   </defs>
   
   <!-- Background -->
-  <rect width="200" height="200" rx="10" fill="url(#bgGradient)" />
+  <rect x="10" y="10" width="180" height="180" rx="10" ry="10" fill="url(#bgGradient)" />
   
-  <!-- Jail bars with sharper, more defined shapes -->
-  <path d="M50,40 L50,160 L65,160 L65,40 Z" fill="url(#barGradient)" />
-  <path d="M92,40 L92,80 L107,80 L107,40 Z" fill="url(#brokenBarGradient)" />
-  <path d="M92,120 L92,160 L107,160 L107,120 Z" fill="url(#brokenBarGradient)" />
-  <path d="M135,40 L135,160 L150,160 L150,40 Z" fill="url(#barGradient)" />
+  <!-- Jail bars with rounded corners -->
+  <rect x="50" y="40" width="15" height="120" rx="5" ry="5" fill="url(#barGradient)" />
+  <rect x="92" y="40" width="15" height="40" rx="5" ry="5" fill="url(#brokenBarGradient)" />
+  <rect x="92" y="120" width="15" height="40" rx="5" ry="5" fill="url(#brokenBarGradient)" />
+  <rect x="135" y="40" width="15" height="120" rx="5" ry="5" fill="url(#barGradient)" />
   
-  <!-- Connecting zigzag between broken bar -->
-  <path d="M99.5,80 L107,90 L92,100 L107,110 L99.5,120" 
-        stroke="#0BBF99" 
-        stroke-width="3" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none" />
+  <!-- Connection between broken bars - zigzag line -->
+  <path d="M99.5 90 L109.5 100 L99.5 110" stroke="url(#connectorGradient)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
 </svg> 
