@@ -40,29 +40,94 @@ export async function startServer(options: ServerOptions = {}): Promise<express.
     if (edition === 'api' && proxyUrl) {
       console.log(`API Edition: Forwarding all requests to ${proxyUrl}`);
       
+      // Special handling for known endpoints
+      app.get('/capabilities.json', (req, res) => {
+        const targetUrl = `${proxyUrl}/capabilities.json`;
+        handleProxyRequest(req, res, targetUrl);
+      });
+      
+      app.get('/health', (req, res) => {
+        const targetUrl = `${proxyUrl}/health`;
+        handleProxyRequest(req, res, targetUrl);
+      });
+      
+      // Handle MCP requests (default path)
+      app.all('/mcp', (req, res) => {
+        handleProxyRequest(req, res, proxyUrl);
+      });
+      
+      // Redirect root to MCP
+      app.get('/', (req, res) => {
+        res.redirect('/mcp');
+      });
+      
+      // Handle all other paths
       app.all('*', (req, res) => {
-        const targetUrl = proxyUrl;
+        res.redirect('/mcp');
+      });
+      
+      // Helper function to handle proxy requests
+      function handleProxyRequest(req: express.Request, res: express.Response, targetUrl: string) {
         console.log(`Forwarding ${req.method} request to ${targetUrl}`);
+        
+        // Filter out problematic headers
+        const filteredHeaders: Record<string, string> = { 
+          'Content-Type': 'application/json'
+        };
+        
+        // Copy safe headers
+        const headersToCopy = ['authorization', 'user-agent', 'accept'];
+        for (const header of headersToCopy) {
+          if (req.headers[header]) {
+            filteredHeaders[header] = req.headers[header] as string;
+          }
+        }
+        
+        // Don't automatically accept compressed responses
+        filteredHeaders['accept-encoding'] = 'identity';
         
         const options = {
           method: req.method,
-          headers: {
-            'Content-Type': 'application/json',
-            ...req.headers as Record<string, string>
-          },
+          headers: filteredHeaders,
           body: req.method !== 'GET' && req.method !== 'HEAD' ? JSON.stringify(req.body) : undefined
         };
         
+        console.log(`Request body: ${options.body || 'none'}`);
+        
         fetch(targetUrl, options)
-          .then(response => response.json())
-          .then(data => {
-            res.json(data);
+          .then(async response => {
+            // Copy status code
+            res.status(response.status);
+            
+            // Simplified header handling - just copy a few critical ones
+            const contentType = response.headers.get('content-type');
+            if (contentType) {
+              res.setHeader('Content-Type', contentType);
+            }
+            
+            try {
+              if (contentType && contentType.includes('application/json')) {
+                // Get JSON response
+                const jsonData = await response.json();
+                res.json(jsonData);
+              } else {
+                // Get text response
+                const text = await response.text();
+                res.send(text);
+              }
+            } catch (parseError) {
+              console.error('Error parsing response:', parseError);
+              // Fallback: return raw body as text
+              const text = await response.text();
+              console.log('Raw response:', text.substring(0, 200) + (text.length > 200 ? '...' : ''));
+              res.send(text);
+            }
           })
           .catch(error => {
             console.error('Error forwarding request:', error);
             res.status(500).send(`Error forwarding request: ${error.message}`);
           });
-      });
+      }
     } else {
       // Register routes
       app.use('/', routes);
