@@ -184,6 +184,23 @@
             transform: translateY(-1px);
         }
 
+        .btn-accent {
+            background-color: var(--accent-color);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 500;
+            border-radius: 4px;
+            letter-spacing: 0.02em;
+            transition: all 0.2s ease;
+        }
+
+        .btn-accent:hover {
+            background-color: #3F45C7;
+            /* Darker accent color */
+            transform: translateY(-1px);
+        }
+
         .btn-outline {
             background: transparent;
             border: 1px solid var(--primary-color);
@@ -525,7 +542,7 @@
                 <a href="https://www.npmjs.com/package/jailbreak-tools" target="_blank" class="btn btn-primary">
                     <i class="fab fa-npm"></i> npm Package
                 </a>
-                <a href="demo.html" class="btn btn-primary ms-2">
+                <a href="demo.html" class="btn btn-accent ms-2">
                     <i class="fas fa-play-circle"></i> Try it now
                 </a>
             </div>
