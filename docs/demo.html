@@ -17,15 +17,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     <style>
         :root {
-            --primary-color: #0BBF99;
-            --primary-dark: #09A080;
-            --primary-light: #27D9B5;
-            --accent-color: #4A50DB;
-            --danger-color: #E83A5F;
-            --dark-bg: #0A0A1A;
-            --dark-card: #141428;
+            --primary-color: #FF5722;
+            --primary-dark: #E64A19;
+            --primary-light: #FF7043;
+            --accent-color: #304FFE;
+            --danger-color: #F44336;
+            --dark-bg: #0F0F1A;
+            --dark-card: #17172B;
             --text-color: #FAFAFA;
-            --code-bg: #1A1A2A;
+            --code-bg: #1D1D30;
             --muted-color: #888899;
             --border-color: rgba(255, 255, 255, 0.1);
         }
@@ -42,8 +42,8 @@
             line-height: 1.6;
             background-color: var(--dark-bg);
             background-image:
-                linear-gradient(rgba(11, 191, 153, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(11, 191, 153, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(255, 87, 34, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 87, 34, 0.03) 1px, transparent 1px);
             background-size: 20px 20px;
             padding-top: 0;
         }
@@ -104,7 +104,7 @@
         }
 
         .demo-header {
-            background-color: rgba(11, 191, 153, 0.1);
+            background-color: rgba(255, 87, 34, 0.1);
             padding: 1rem;
             border-bottom: 1px solid var(--border-color);
         }
@@ -187,12 +187,12 @@
         }
 
         .result-classification.safe {
-            background-color: rgba(11, 191, 153, 0.2);
-            color: var(--primary-light);
+            background-color: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
         }
 
         .result-classification.unsafe {
-            background-color: rgba(232, 58, 95, 0.2);
+            background-color: rgba(244, 67, 54, 0.2);
             color: var(--danger-color);
         }
 
