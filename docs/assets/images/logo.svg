@@ -1,61 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
   <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#1A1A2E" />
       <stop offset="100%" stop-color="#0F3460" />
     </linearGradient>
-    <linearGradient id="barGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#16213E" />
-      <stop offset="50%" stop-color="#00F5FF" />
-      <stop offset="100%" stop-color="#16213E" />
+    <linearGradient id="barGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4CC9F0" />
+      <stop offset="100%" stop-color="#3A86FF" />
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2.5" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <pattern id="circuitPattern" patternUnits="userSpaceOnUse" width="50" height="50" patternTransform="scale(0.5) rotate(0)">
-      <path d="M10,10 L40,10 M25,10 L25,40 M10,25 L40,25 M40,25 L40,40" stroke="#4CC9F0" stroke-width="0.8" fill="none" opacity="0.3"/>
-      <circle cx="10" cy="10" r="2" fill="#4CC9F0" opacity="0.5" />
-      <circle cx="40" cy="10" r="2" fill="#4CC9F0" opacity="0.5" />
-      <circle cx="10" cy="25" r="2" fill="#4CC9F0" opacity="0.5" />
-      <circle cx="25" cy="10" r="2" fill="#4CC9F0" opacity="0.5" />
-      <circle cx="40" cy="25" r="2" fill="#4CC9F0" opacity="0.5" />
-      <circle cx="25" cy="40" r="2" fill="#4CC9F0" opacity="0.5" />
-      <circle cx="40" cy="40" r="2" fill="#4CC9F0" opacity="0.5" />
-    </pattern>
+    <linearGradient id="brokenBarGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F72585" />
+      <stop offset="100%" stop-color="#B5179E" />
+    </linearGradient>
   </defs>
   
-  <!-- Background with circuit pattern -->
-  <rect width="200" height="200" rx="25" fill="url(#gradient)" />
-  <rect width="200" height="200" rx="25" fill="url(#circuitPattern)" />
+  <!-- Background -->
+  <rect width="200" height="200" rx="15" fill="url(#bgGradient)" />
   
-  <g transform="translate(40, 50)">
-    <!-- Jail bars with glow effect -->
-    <rect x="10" y="10" width="10" height="80" rx="2" fill="url(#barGradient)" filter="url(#glow)" />
-    <rect x="40" y="10" width="10" height="80" rx="2" fill="url(#barGradient)" filter="url(#glow)" />
-    <rect x="100" y="10" width="10" height="80" rx="2" fill="url(#barGradient)" filter="url(#glow)" />
-    
-    <!-- Broken bar with electric effect -->
-    <rect x="70" y="10" width="10" height="30" rx="2" fill="#F72585" filter="url(#glow)" />
-    <rect x="70" y="60" width="10" height="30" rx="2" fill="#F72585" filter="url(#glow)" />
-    
-    <!-- Lightning bolt connecting the broken bar -->
-    <path d="M75,40 L82,47 L72,55 L78,60" stroke="#F72585" stroke-width="3" fill="none" filter="url(#glow)" />
-    
-    <!-- Digital wrench -->
-    <path d="M60,50 L110,20 L115,25 L80,55 Z" fill="#4CC9F0" filter="url(#glow)" transform="rotate(15, 80, 40)" />
-    <path d="M85,35 L90,40 M75,45 L80,50" stroke="#FFFFFF" stroke-width="1.5" />
-    
-    <!-- Binary code element -->
-    <text x="20" y="45" font-family="monospace" font-size="8" fill="#4CC9F0">10</text>
-    <text x="90" y="30" font-family="monospace" font-size="8" fill="#4CC9F0">01</text>
-  </g>
+  <!-- Jail bars -->
+  <rect x="50" y="40" width="12" height="120" rx="2" fill="url(#barGradient)" />
+  <rect x="94" y="40" width="12" height="120" rx="2" fill="url(#barGradient)" />
+  <rect x="138" y="40" width="12" height="120" rx="2" fill="url(#barGradient)" />
   
-  <!-- Modern tech-styled text -->
-  <rect x="0" y="150" width="200" height="40" fill="#16213E" />
-  <text x="100" y="175" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#4CC9F0" filter="url(#glow)">JAILBREAK TOOLS</text>
-  <line x1="30" y1="150" x2="170" y2="150" stroke="#4CC9F0" stroke-width="1" />
+  <!-- Broken bar -->
+  <rect x="94" y="40" width="12" height="45" rx="2" fill="url(#brokenBarGradient)" />
+  <rect x="94" y="115" width="12" height="45" rx="2" fill="url(#brokenBarGradient)" />
+  
+  <!-- Simple lightning connector -->
+  <path d="M100,85 L108,95 L94,105 L102,115" stroke="#F72585" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
 </svg> 
