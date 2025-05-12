@@ -1,6 +1,6 @@
 {
     "name": "jailbreak-tools",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Model Context Protocol server with TypeScript for jailbreak detection tools",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
