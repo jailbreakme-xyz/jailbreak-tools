@@ -2,20 +2,20 @@
   <!-- Define gradients -->
   <defs>
     <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#141428" />
-      <stop offset="100%" stop-color="#0A0A1A" />
+      <stop offset="0%" stop-color="#17172B" />
+      <stop offset="100%" stop-color="#0F0F1A" />
     </linearGradient>
     <linearGradient id="barGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0BBF99" />
-      <stop offset="100%" stop-color="#09A080" />
+      <stop offset="0%" stop-color="#FF5722" />
+      <stop offset="100%" stop-color="#E64A19" />
     </linearGradient>
     <linearGradient id="brokenBarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0BBF99" />
-      <stop offset="100%" stop-color="#27D9B5" />
+      <stop offset="0%" stop-color="#FF7043" />
+      <stop offset="100%" stop-color="#FF5722" />
     </linearGradient>
     <linearGradient id="connectorGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0BBF99" />
-      <stop offset="100%" stop-color="#0BBF99" />
+      <stop offset="0%" stop-color="#FF5722" />
+      <stop offset="100%" stop-color="#FF7043" />
     </linearGradient>
   </defs>
   

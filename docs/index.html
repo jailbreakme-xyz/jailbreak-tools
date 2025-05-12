@@ -17,15 +17,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     <style>
         :root {
-            --primary-color: #0BBF99;
-            --primary-dark: #09A080;
-            --primary-light: #27D9B5;
-            --accent-color: #4A50DB;
-            --danger-color: #E83A5F;
-            --dark-bg: #0A0A1A;
-            --dark-card: #141428;
+            --primary-color: #FF5722;
+            --primary-dark: #E64A19;
+            --primary-light: #FF7043;
+            --accent-color: #304FFE;
+            --danger-color: #F44336;
+            --dark-bg: #0F0F1A;
+            --dark-card: #17172B;
             --text-color: #FAFAFA;
-            --code-bg: #1A1A2A;
+            --code-bg: #1D1D30;
             --muted-color: #888899;
             --border-color: rgba(255, 255, 255, 0.1);
         }
@@ -42,8 +42,8 @@
             line-height: 1.6;
             background-color: var(--dark-bg);
             background-image:
-                linear-gradient(rgba(11, 191, 153, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(11, 191, 153, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(255, 87, 34, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 87, 34, 0.03) 1px, transparent 1px);
             background-size: 20px 20px;
             padding-top: 0;
         }
@@ -73,7 +73,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 50% 0%, rgba(11, 191, 153, 0.15), rgba(10, 10, 26, 0) 60%);
+            background: radial-gradient(circle at 50% 0%, rgba(255, 87, 34, 0.15), rgba(15, 15, 26, 0) 60%);
         }
 
         .grid-bg {
@@ -135,7 +135,7 @@
         .npm-banner:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-            border-color: rgba(11, 191, 153, 0.2);
+            border-color: rgba(255, 87, 34, 0.2);
         }
 
         .npm-command {
@@ -155,7 +155,7 @@
             right: 16px;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(11, 191, 153, 0.1);
+            background: rgba(255, 87, 34, 0.1);
             border: none;
             border-radius: 4px;
             padding: 6px 12px;
@@ -165,7 +165,7 @@
         }
 
         .copy-button:hover {
-            background: rgba(11, 191, 153, 0.2);
+            background: rgba(255, 87, 34, 0.2);
         }
 
         .btn-primary {
@@ -214,7 +214,7 @@
         }
 
         .btn-outline:hover {
-            background-color: rgba(11, 191, 153, 0.1);
+            background-color: rgba(255, 87, 34, 0.1);
             color: var(--primary-color);
             transform: translateY(-1px);
         }
@@ -260,7 +260,7 @@
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-            border-color: rgba(11, 191, 153, 0.2);
+            border-color: rgba(255, 87, 34, 0.2);
         }
 
         .feature-icon {
@@ -310,7 +310,7 @@
             font-size: 0.7rem;
             padding: 2px 8px;
             border-radius: 4px;
-            background-color: rgba(11, 191, 153, 0.1);
+            background-color: rgba(255, 87, 34, 0.1);
             color: var(--primary-color);
         }
 
@@ -564,7 +564,7 @@
                     <div class="terminal-prompt">
                         <span>startServer({ edition: "api" })</span>
                     </div>
-                    <div class="terminal-prompt" style="color:#0BBF99">
+                    <div class="terminal-prompt" style="color:#FF5722">
                         <span>🚀 MCP Server running at http://localhost:4000</span>
                     </div>
                 </div>
@@ -906,7 +906,7 @@ startServer({
             canvas.height = hero.offsetHeight;
 
             // Draw a tech-inspired grid
-            ctx.strokeStyle = 'rgba(11, 191, 153, 0.07)';
+            ctx.strokeStyle = 'rgba(255, 87, 34, 0.07)';
             ctx.lineWidth = 1;
 
             // Horizontal lines
@@ -928,7 +928,7 @@ startServer({
             }
 
             // Accent points
-            ctx.fillStyle = 'rgba(11, 191, 153, 0.2)';
+            ctx.fillStyle = 'rgba(255, 87, 34, 0.2)';
             for (let x = 0; x < canvas.width; x += vStep) {
                 for (let y = 0; y < canvas.height; y += hStep) {
                     // Random points
