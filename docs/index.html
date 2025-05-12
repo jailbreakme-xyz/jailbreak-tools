@@ -17,11 +17,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     <style>
         :root {
-            --primary-color: #0070F3;
-            --accent-color: #7928CA;
-            --danger-color: #FF0080;
-            --dark-bg: #10101E;
-            --dark-card: #171727;
+            --primary-color: #0BBF99;
+            --primary-dark: #09A080;
+            --primary-light: #27D9B5;
+            --accent-color: #4A50DB;
+            --danger-color: #E83A5F;
+            --dark-bg: #0A0A1A;
+            --dark-card: #141428;
             --text-color: #FAFAFA;
             --code-bg: #1A1A2A;
             --muted-color: #888899;
@@ -40,9 +42,10 @@
             line-height: 1.6;
             background-color: var(--dark-bg);
             background-image:
-                linear-gradient(rgba(0, 112, 243, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 112, 243, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(11, 191, 153, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(11, 191, 153, 0.03) 1px, transparent 1px);
             background-size: 20px 20px;
+            padding-top: 0;
         }
 
         h1,
@@ -57,7 +60,7 @@
         }
 
         .hero {
-            padding: 7rem 0 4rem;
+            padding: 6rem 0 4rem;
             position: relative;
             overflow: hidden;
             border-bottom: 1px solid var(--border-color);
@@ -70,7 +73,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 50% 0%, rgba(121, 40, 202, 0.15), rgba(16, 16, 30, 0) 50%);
+            background: radial-gradient(circle at 50% 0%, rgba(11, 191, 153, 0.15), rgba(10, 10, 26, 0) 60%);
         }
 
         .grid-bg {
@@ -88,26 +91,27 @@
         }
 
         .logo {
-            width: 130px;
-            height: 130px;
-            margin-bottom: 1.5rem;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 2rem;
         }
 
         .headline {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
             background: linear-gradient(to right, var(--primary-color), var(--accent-color));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         .tagline {
             font-size: 1.25rem;
             opacity: 0.9;
             max-width: 700px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 2.5rem;
             font-weight: 300;
         }
 
@@ -131,7 +135,7 @@
         .npm-banner:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-            border-color: rgba(0, 112, 243, 0.2);
+            border-color: rgba(11, 191, 153, 0.2);
         }
 
         .npm-command {
@@ -151,7 +155,7 @@
             right: 16px;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 112, 243, 0.1);
+            background: rgba(11, 191, 153, 0.1);
             border: none;
             border-radius: 4px;
             padding: 6px 12px;
@@ -161,7 +165,7 @@
         }
 
         .copy-button:hover {
-            background: rgba(0, 112, 243, 0.2);
+            background: rgba(11, 191, 153, 0.2);
         }
 
         .btn-primary {
@@ -176,7 +180,7 @@
         }
 
         .btn-primary:hover {
-            background-color: #0060DF;
+            background-color: var(--primary-dark);
             transform: translateY(-1px);
         }
 
@@ -193,7 +197,7 @@
         }
 
         .btn-outline:hover {
-            background-color: rgba(0, 112, 243, 0.1);
+            background-color: rgba(11, 191, 153, 0.1);
             color: var(--primary-color);
             transform: translateY(-1px);
         }
@@ -204,7 +208,7 @@
         }
 
         .section.section-alt {
-            background-color: rgba(23, 23, 39, 0.5);
+            background-color: rgba(20, 20, 40, 0.5);
         }
 
         .section-title {
@@ -239,7 +243,7 @@
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-            border-color: rgba(0, 112, 243, 0.2);
+            border-color: rgba(11, 191, 153, 0.2);
         }
 
         .feature-icon {
@@ -289,7 +293,7 @@
             font-size: 0.7rem;
             padding: 2px 8px;
             border-radius: 4px;
-            background-color: rgba(0, 112, 243, 0.1);
+            background-color: rgba(11, 191, 153, 0.1);
             color: var(--primary-color);
         }
 
@@ -359,64 +363,6 @@
             color: var(--primary-color);
         }
 
-        .navbar-cyber {
-            background-color: rgba(16, 16, 30, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 0.8rem 0;
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-brand {
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--text-color) !important;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-        }
-
-        .navbar-brand img {
-            height: 28px;
-            margin-right: 8px;
-        }
-
-        .nav-link {
-            color: var(--text-color) !important;
-            margin: 0 10px;
-            position: relative;
-            padding: 5px 2px !important;
-            transition: all 0.2s;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--primary-color);
-            transform: scaleX(0);
-            transition: transform 0.2s;
-            transform-origin: right;
-        }
-
-        .nav-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color) !important;
-        }
-
-        .navbar-toggler {
-            border: none;
-            color: var(--primary-color);
-        }
-
         .badge {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.7rem;
@@ -445,7 +391,7 @@
         }
 
         .terminal-header {
-            background: #171727;
+            background: var(--dark-card);
             padding: 10px;
             display: flex;
             align-items: center;
@@ -504,6 +450,36 @@
             word-break: break-all;
         }
 
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            animation: bounce 2s infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0) translateX(-50%);
+            }
+
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
         @media (max-width: 768px) {
             .hero {
                 padding: 5rem 0 3rem;
@@ -525,36 +501,6 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-cyber fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="assets/images/logo.svg" alt="Logo">
-                Jailbreak Tools
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#quickstart">Quick Start</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#api">API</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/jailbreakme-xyz/jailbreak-tools" target="_blank">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <header class="hero">
         <div class="grid-bg" id="grid-bg"></div>
         <div class="container text-center hero-content">
@@ -597,10 +543,14 @@
                     <div class="terminal-prompt">
                         <span>startServer({ edition: "api" })</span>
                     </div>
-                    <div class="terminal-prompt" style="color:#0070F3">
+                    <div class="terminal-prompt" style="color:#0BBF99">
                         <span>🚀 MCP Server running at http://localhost:4000</span>
                     </div>
                 </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
             </div>
         </div>
     </header>
@@ -929,7 +879,7 @@ startServer({
             canvas.height = hero.offsetHeight;
 
             // Draw a tech-inspired grid
-            ctx.strokeStyle = 'rgba(0, 112, 243, 0.07)';
+            ctx.strokeStyle = 'rgba(11, 191, 153, 0.07)';
             ctx.lineWidth = 1;
 
             // Horizontal lines
@@ -951,7 +901,7 @@ startServer({
             }
 
             // Accent points
-            ctx.fillStyle = 'rgba(0, 112, 243, 0.2)';
+            ctx.fillStyle = 'rgba(11, 191, 153, 0.2)';
             for (let x = 0; x < canvas.width; x += vStep) {
                 for (let y = 0; y < canvas.height; y += hStep) {
                     // Random points

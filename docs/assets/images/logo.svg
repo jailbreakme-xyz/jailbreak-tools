@@ -1,13 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <!-- Background shape -->
-  <rect width="200" height="200" rx="10" fill="#10101E" />
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A1A" />
+      <stop offset="100%" stop-color="#111130" />
+    </linearGradient>
+    <linearGradient id="barGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0BBF99" />
+      <stop offset="100%" stop-color="#099B7D" />
+    </linearGradient>
+    <linearGradient id="brokenBarGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0BBF99" />
+      <stop offset="100%" stop-color="#099B7D" />
+    </linearGradient>
+  </defs>
   
-  <!-- Jail bars - basic shapes with flat colors -->
-  <rect x="55" y="50" width="10" height="100" rx="1" fill="#7928CA" />
-  <rect x="95" y="50" width="10" height="40" rx="1" fill="#0070F3" />
-  <rect x="95" y="110" width="10" height="40" rx="1" fill="#0070F3" />
-  <rect x="135" y="50" width="10" height="100" rx="1" fill="#7928CA" />
+  <!-- Background -->
+  <rect width="200" height="200" rx="10" fill="url(#bgGradient)" />
   
-  <!-- Simple line connecting broken bar -->
-  <path d="M100,90 L100,110" stroke="#FF0080" stroke-width="3" stroke-dasharray="3 3" stroke-linecap="round" />
+  <!-- Jail bars with sharper, more defined shapes -->
+  <path d="M50,40 L50,160 L65,160 L65,40 Z" fill="url(#barGradient)" />
+  <path d="M92,40 L92,80 L107,80 L107,40 Z" fill="url(#brokenBarGradient)" />
+  <path d="M92,120 L92,160 L107,160 L107,120 Z" fill="url(#brokenBarGradient)" />
+  <path d="M135,40 L135,160 L150,160 L150,40 Z" fill="url(#barGradient)" />
+  
+  <!-- Connecting zigzag between broken bar -->
+  <path d="M99.5,80 L107,90 L92,100 L107,110 L99.5,120" 
+        stroke="#0BBF99" 
+        stroke-width="3" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none" />
 </svg> 
