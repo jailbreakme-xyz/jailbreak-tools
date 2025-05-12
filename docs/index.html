@@ -502,7 +502,7 @@
 
 <body>
     <header class="hero">
-        <div class="grid-bg" id="grid-bg"></div>
+        <canvas class="grid-bg" id="grid-bg"></canvas>
         <div class="container text-center hero-content">
             <img src="assets/images/logo.svg" alt="Jailbreak Tools Logo" class="logo">
             <h1 class="headline">JAILBREAK TOOLS</h1>
@@ -518,10 +518,11 @@
             </div>
 
             <div class="mt-4">
-                <a href="https://github.com/jailbreakme-xyz/jailbreak-tools" class="btn btn-outline me-2">
+                <a href="https://github.com/jailbreakme-xyz/jailbreak-tools" target="_blank"
+                    class="btn btn-outline me-2">
                     <i class="fab fa-github"></i> GitHub
                 </a>
-                <a href="https://www.npmjs.com/package/jailbreak-tools" class="btn btn-primary">
+                <a href="https://www.npmjs.com/package/jailbreak-tools" target="_blank" class="btn btn-primary">
                     <i class="fab fa-npm"></i> npm Package
                 </a>
             </div>
@@ -837,9 +838,9 @@ startServer({
                                 class="fab fa-github"></i></a>
                         <a href="https://www.npmjs.com/package/jailbreak-tools" target="_blank"><i
                                 class="fab fa-npm"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="mailto:dev@jailbreakme.xyz" target="_blank"><i class="fas fa-envelope"></i></a>
                     </div>
-                    <a href="#" class="btn btn-sm btn-outline">
+                    <a href="mailto:dev@jailbreakme.xyz" target="_blank" class="btn btn-sm btn-outline">
                         <i class="fas fa-paper-plane me-1"></i> Contact
                     </a>
                 </div>
@@ -851,11 +852,14 @@ startServer({
     <script>
         // Initialize syntax highlighting
         document.addEventListener('DOMContentLoaded', () => {
-            hljs.highlightAll();
-            initGridBackground();
-
             // Set current year in footer
             document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Initialize syntax highlighting
+            hljs.highlightAll();
+
+            // Initialize grid background
+            initGridBackground();
         });
 
         // Copy to clipboard function
